@@ -1,4 +1,5 @@
 import get from 'lodash.get';
+import { DOWN, LEFT, RIGHT, UP } from '../types/directions';
 
 export const drawOnCanvas = (canvasContext, payload = {}) => {
   if (canvasContext) {
@@ -31,29 +32,28 @@ export const determineChangesOnCanvas = (payload = {}) => {
   let newCoord;
   const response = { changes: {} };
   switch (keyCode) {
-    // a keycode
-    case (65):
+    case (LEFT):
       newCoord = xCoordRef - 5;
       if (newCoord >= 0) {
         response.changes.xCoord = newCoord;
       }
       break;
     // d keycode
-    case (68):
+    case (RIGHT):
       newCoord = xCoordRef + 5;
       if (newCoord <= canvasWidthRef - width) {
         response.changes.xCoord = newCoord;
       }
       break;
     // s keycode
-    case (83):
+    case (DOWN):
       newCoord = yCoordRef + 5;
       if (newCoord <= canvasHeightRef - height) {
         response.changes.yCoord = newCoord;
       }
       break;
     // w keycode
-    case (87):
+    case (UP):
       newCoord = yCoordRef - 5;
       if (newCoord >= 0) {
         response.changes.yCoord = newCoord;
@@ -61,6 +61,5 @@ export const determineChangesOnCanvas = (payload = {}) => {
       break;
     default: // do nothing
   };
-  console.log('response', response);
   return response;
 };
