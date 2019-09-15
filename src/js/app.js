@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import Footer from './components/footer';
 import Header from './components/header';
@@ -11,10 +12,8 @@ const styles = {
     maxWidth: '1280px'
   }
 };
-
-const app = props => {
-  const { classes } = props;
-
+const propTypes = { classes: PropTypes.object };
+const app = ({ classes }) => {
   return (
     <div className={classes.appWrapper}>
       <Header />
@@ -23,4 +22,5 @@ const app = props => {
     </div>);
 };
 
+app.propTypes = propTypes;
 export default withStyles(styles)(app);

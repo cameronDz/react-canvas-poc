@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import get from 'lodash.get';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/styles';
@@ -13,9 +14,8 @@ const styles = {
     width: '100%'
   }
 };
-
-const canvasBox = props => {
-  const { classes } = props;
+const propTypes = { classes: PropTypes.object };
+const canvasBox = ({ classes }) => {
   const height = 5;
   const width = 5;
 
@@ -25,14 +25,14 @@ const canvasBox = props => {
   const [yCoord, setYCoord] = useState(0);
 
   // keep state updated for event listener
-  let canvasHeightRef = useRef(canvasHeight);
-  let canvasWidthRef = useRef(canvasWidth);
-  let xCoordRef = useRef(xCoord);
-  let yCoordRef = useRef(yCoord);
+  const canvasHeightRef = useRef(canvasHeight);
+  const canvasWidthRef = useRef(canvasWidth);
+  const xCoordRef = useRef(xCoord);
+  const yCoordRef = useRef(yCoord);
 
   useEffect(() => {
     // set size of canvas only once
-    const canvasElement = document.getElementById("canvas-element");
+    const canvasElement = document.getElementById('canvas-element');
     const box = getBoxDetails(canvasElement);
     setCanvasHeight(box.height);
     setCanvasWidth(box.width);
@@ -43,8 +43,8 @@ const canvasBox = props => {
 
   // repaint canvas
   useEffect(() => {
-    const canvasElement = document.getElementById("canvas-element");
-    const context = canvasElement.getContext("2d");
+    const canvasElement = document.getElementById('canvas-element');
+    const context = canvasElement.getContext('2d');
 
     // create position objects and redraw on canvas
     const box = getBoxDetails(canvasElement);
@@ -75,7 +75,9 @@ const canvasBox = props => {
   const handleKeyDownEvent = event => {
     const keyCode = get(event, 'keyCode', -1);
     const currentCanvasPayload = {
-      height, keyCode, width,
+      height,
+      keyCode,
+      width,
       canvasHeightRef: canvasHeightRef.current,
       canvasWidthRef: canvasWidthRef.current,
       xCoordRef: xCoordRef.current,
@@ -103,4 +105,5 @@ const canvasBox = props => {
     </React.Fragment>);
 };
 
+canvasBox.propTypes = propTypes;
 export default withStyles(styles)(canvasBox);

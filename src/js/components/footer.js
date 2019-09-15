@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
 
 const styles = {
@@ -8,15 +9,15 @@ const styles = {
     position: 'relative',
     textAlign: 'center',
     width: '100%'
-  },
+  }
 };
-
-const footer = props => {
-  const { classes } = props;
+const propTypes = { classes: PropTypes.object };
+const footer = ({ classes }) => {
   return (
     <div className={classes.headerContainer}>
       This is the Footer
     </div>);
 };
 
+footer.propTypes = propTypes;
 export default withStyles(styles)(footer);

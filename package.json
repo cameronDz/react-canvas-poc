@@ -5,6 +5,7 @@
     "@material-ui/styles": "^4.1.1",
     "lodash": "^4.17.14",
     "lodash.get": "^4.4.2",
+    "path": "^0.12.7",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -39,8 +40,8 @@
   "name": "react-canvas-poc",
   "scripts": {
     "build": "webpack --config webpack/config.babel.js",
-    "lint": "eslint ./src/**/* ./webpack",
-    "lint-fix": "eslint --fix ./src/js/**/* ./webpack",
+    "lint": "eslint ./src/**/*.js ./webpack",
+    "lint-fix": "eslint --fix ./src/**/*.js ./webpack",
     "start": "webpack-dev-server --open --hot --config webpack/config.babel.js"
   },
   "version": "1.1.0"

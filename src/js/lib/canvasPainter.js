@@ -1,7 +1,7 @@
 import get from 'lodash.get';
 
 export const drawOnCanvas = (canvasContext, payload = {}) => {
-  if (!!canvasContext) {
+  if (canvasContext) {
     // get all variables out of payload
     const boxHeight = get(payload, 'box.height', 0);
     const boxWidth = get(payload, 'box.width', 0);
@@ -12,7 +12,7 @@ export const drawOnCanvas = (canvasContext, payload = {}) => {
     const height = get(payload, 'positions.height', 0);
 
     // paint canver
-    canvasContext.clearRect(0, 0, boxWidth, boxHeight)
+    canvasContext.clearRect(0, 0, boxWidth, boxHeight);
     canvasContext.fillRect(xCoord, yCoord, width, height);
   }
 };
@@ -47,7 +47,7 @@ export const determineChangesOnCanvas = (payload = {}) => {
       break;
     // s keycode
     case (83):
-      newCoord =  yCoordRef + 5;
+      newCoord = yCoordRef + 5;
       if (newCoord <= canvasHeightRef - height) {
         response.changes.yCoord = newCoord;
       }
