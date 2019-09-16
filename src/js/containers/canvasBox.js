@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import get from 'lodash.get';
-import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/styles';
 import { determineChangesOnCanvas, drawOnCanvas } from '../lib/canvasPainter';
 
@@ -93,16 +92,7 @@ const canvasBox = ({ classes }) => {
     }
   };
 
-  return (
-    <React.Fragment>
-      <Grid container spacing={8}>
-        <Grid item xs={12} sm={2} md={3}></Grid>
-        <Grid item xs={12} sm={8} md={6}>
-          <canvas className={classes.canvasElement} id="canvas-element"></canvas>
-        </Grid>
-        <Grid item xs={12} sm={2} md={3}></Grid>
-      </Grid>
-    </React.Fragment>);
+  return <canvas className={classes.canvasElement} id="canvas-element"></canvas>;
 };
 
 canvasBox.propTypes = propTypes;
