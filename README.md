@@ -17,3 +17,13 @@ npm run start
  - [Material-UI](https://material-ui.com/) for Grid styling.
  - [Webpack](https://webpack.js.org/) for bundling the application.
  - [Babel](https://babeljs.io/) for compiling the JavaScript.
+
+## Canvas Docs ##
+```context.arc(x, y, r, sAngle, eAngle, counterclockwise);```
+* ```x``` The x-coordinate of the center of the circle
+* ```y``` The y-coordinate of the center of the circle
+* ```r``` The radius of the circle
+* ```sAngle``` The starting angle, in radians (0 is at the 3 o'clock position of the arc's circle)
+* ```eAngle``` The ending angle, in radians
+* ```counterclockwise``` Optional. Specifies whether the drawing should be counterclockwise or clockwise. False is default, and indicates clockwise, while true indicates counter-clockwise.
+[W3 Source](https://www.w3schools.com/tags/canvas_arc.asp)
