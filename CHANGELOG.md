@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+- Updated vulnerable dependency packages for: http-proxy, node-forge, serialize-javascript, and yargs-parser
+
 ## [1.2.0] 20 March 2020
 ### Fixed
 - Updated major/minor/patch version of all packages, fixed vulnerabilities in dependencies
