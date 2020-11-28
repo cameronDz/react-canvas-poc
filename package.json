@@ -1,5 +1,9 @@
 {
-  "author": "cameronDz",
+  "author": {
+    "email": "camerondziurgot@gmail.com",
+    "name": "Cam Dziurgot",
+    "url": "https://www.camdziurgot.io"
+  },
   "description": "Simple canvas project with React Hooks",
   "devDependencies": {
     "@babel/core": "^7.4.5",
